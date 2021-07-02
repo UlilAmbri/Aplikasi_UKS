@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RekamMedis" language="groovy" pageWidth="650" pageHeight="842" columnWidth="610" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d339aad4-e428-4b86-9abf-69db4a5282c5">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     t_pemeriksaan.`kode_periksa` AS t_pemeriksaan_kode_periksa,
+     t_pemeriksaan.`kode_list` AS t_pemeriksaan_kode_list,
+     t_pemeriksaan.`kode_obat` AS t_pemeriksaan_kode_obat,
+     t_pemeriksaan.`kode_pasien` AS t_pemeriksaan_kode_pasien,
+     t_pemeriksaan.`kode_petugas` AS t_pemeriksaan_kode_petugas,
+     t_pemeriksaan.`diagnosa` AS t_pemeriksaan_diagnosa
+FROM
+     `t_pemeriksaan` t_pemeriksaan]]>
+	</queryString>
+	<field name="t_pemeriksaan_kode_periksa" class="java.lang.String"/>
+	<field name="t_pemeriksaan_kode_list" class="java.lang.String"/>
+	<field name="t_pemeriksaan_kode_obat" class="java.lang.String"/>
+	<field name="t_pemeriksaan_kode_pasien" class="java.lang.String"/>
+	<field name="t_pemeriksaan_kode_petugas" class="java.lang.String"/>
+	<field name="t_pemeriksaan_diagnosa" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="56" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="98a81ea0-fbfe-4545-af2f-440e09ec9a55" x="107" y="12" width="331" height="33"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAPORAN DATA REKAM MEDIS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="463a20ed-a128-4011-b204-a83b7d4c945e" mode="Opaque" x="0" y="0" width="100" height="20" backcolor="#CC99FF"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Kode Periksa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6962b904-02c9-43d1-8c01-dacbfcdca251" mode="Opaque" x="100" y="0" width="100" height="20" backcolor="#CC99FF"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Kode List]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="66efd8a9-184a-47a1-9b16-94efbbf0738b" mode="Opaque" x="200" y="0" width="100" height="20" backcolor="#CC99FF"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Kode Obat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a9c014f9-625e-464d-b201-2ab62f291701" mode="Opaque" x="300" y="0" width="100" height="20" backcolor="#CC99FF"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Kode Pasien]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="04a849dd-a180-435f-ab0f-7aee82099ddd" mode="Opaque" x="400" y="0" width="100" height="20" backcolor="#CC99FF"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Kode Petugas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d78a5e1c-2e94-4527-be70-bdc6869ac4f7" mode="Opaque" x="500" y="0" width="100" height="20" backcolor="#CC99FF"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Diagnosa]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement uuid="8b80e96a-1469-46c7-87ab-1b8cf7844f80" x="0" y="0" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{t_pemeriksaan_kode_periksa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="5d907a03-2f73-40dc-aa8a-da8d5fb479ef" x="100" y="0" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{t_pemeriksaan_kode_list}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="50c652cc-f39e-4833-ae3e-4d2e2137b948" x="200" y="0" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{t_pemeriksaan_kode_obat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="dd548976-d44e-42a4-aab3-e11eba1e3368" x="300" y="0" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{t_pemeriksaan_kode_pasien}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="55daaf00-345c-4698-b2ab-f4253e9ab7c9" x="400" y="0" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{t_pemeriksaan_kode_petugas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="5f6fa0c2-6df5-42e6-9e18-6d009d077087" x="500" y="0" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{t_pemeriksaan_diagnosa}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="44" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

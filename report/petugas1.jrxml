@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="petugas1" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1dee0fad-69cc-4514-a40f-1cf79880aca3">
+	<property name="ireport.zoom" value="2.3579476910000032"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     t_petugas.`kode_petugas` AS t_petugas_kode_petugas,
+     t_petugas.`nama` AS t_petugas_nama,
+     t_petugas.`alamat` AS t_petugas_alamat,
+     t_petugas.`jekel` AS t_petugas_jekel,
+     t_petugas.`no_hp` AS t_petugas_no_hp
+FROM
+     `t_petugas` t_petugas]]>
+	</queryString>
+	<field name="t_petugas_kode_petugas" class="java.lang.String"/>
+	<field name="t_petugas_nama" class="java.lang.String"/>
+	<field name="t_petugas_alamat" class="java.lang.String"/>
+	<field name="t_petugas_jekel" class="java.lang.String"/>
+	<field name="t_petugas_no_hp" class="java.lang.String"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="42">
+			<frame>
+				<reportElement uuid="3a42009e-ecaa-45da-aafa-67df3ecaeca4" mode="Opaque" x="-20" y="-20" width="595" height="53" backcolor="#006699"/>
+				<staticText>
+					<reportElement uuid="ef2e494a-dd38-459d-b0cf-44687c04dbf5" stretchType="RelativeToBandHeight" x="163" y="0" width="412" height="33" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="26" isBold="true"/>
+					</textElement>
+					<text><![CDATA[LAPORAN DATA PETUGAS UKS]]></text>
+				</staticText>
+				<image scaleImage="RealHeight" hAlign="Center" vAlign="Middle">
+					<reportElement uuid="65337c88-94db-4389-bb21-1e131ff94fa3" x="0" y="0" width="100" height="43"/>
+					<imageExpression><![CDATA["C:\\Users\\User\\Documents\\NetBeansProjects\\Aplikasi_UKS\\src\\aplikasi_uks\\LogoBaru.png"]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement uuid="b422865e-b3aa-4d13-aaae-e5d5b2af4cbf" stretchType="RelativeToBandHeight" x="203" y="33" width="300" height="20" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Sistem Informasi Aplikasi UKS]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="11"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="20">
+			<rectangle>
+				<reportElement uuid="0fb45d1a-1ee1-47fd-889c-e0a9a8e972d8" x="0" y="0" width="555" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="762efcb6-cd23-48d9-ac7a-2d1ef22d6533" x="0" y="0" width="100" height="20" forecolor="#006699"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kode Petugas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c2b24ef3-d2f8-4458-9fbf-b0ef7b2cb64b" x="100" y="0" width="132" height="20" forecolor="#006699"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nama Petugas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5ffc5b38-5464-4710-b306-5bffc8bbaf5f" x="232" y="0" width="123" height="20" forecolor="#006699"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Alamat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="aa4ae9cf-0771-4f95-8304-f948b8b4bb50" x="355" y="0" width="100" height="20" forecolor="#006699"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jenis Kelamin]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3eadbe52-3772-4bda-89e9-bec5b5907459" x="455" y="0" width="100" height="20" forecolor="#006699"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[No Hp]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement uuid="e32ea90e-05eb-43bb-8f4a-26f7f918e36e" positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1"/>
+			</line>
+			<textField>
+				<reportElement uuid="7900d135-259c-4c35-a62a-ddbd65e40c4f" x="100" y="0" width="132" height="20"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{t_petugas_nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4c7cb49d-b01a-422f-9a7b-cdacad94f177" x="355" y="0" width="100" height="20"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{t_petugas_jekel}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d5249b61-580a-4f22-baf8-592a02163fef" x="0" y="0" width="100" height="20"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{t_petugas_kode_petugas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="2981c018-5c6c-488f-bcd5-87da732c3658" x="455" y="0" width="100" height="20"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{t_petugas_no_hp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="72f05296-72b8-45af-bae5-d2983167621a" x="232" y="0" width="123" height="20"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{t_petugas_alamat}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement uuid="d35878e0-e401-4339-938a-cf5f066814d5" mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="7bf83d11-f584-4d20-a2ad-d83cd6d22a24" mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="2a25e5d1-0c5a-4811-867d-da541ed00a02" x="0" y="4" width="100" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

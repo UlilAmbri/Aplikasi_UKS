@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RekamMedis4" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bc1fab7c-4dd9-40ed-af7a-c456e6dbd6bc">
+	<property name="ireport.zoom" value="1.771561000000001"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     t_pemeriksaan.`kode_periksa` AS t_pemeriksaan_kode_periksa,
+     t_pemeriksaan.`kode_keluhan` AS t_pemeriksaan_kode_keluhan,
+     t_pemeriksaan.`kode_ambilobat` AS t_pemeriksaan_kode_ambilobat,
+     t_pemeriksaan.`kode_pasien` AS t_pemeriksaan_kode_pasien,
+     t_pemeriksaan.`kode_petugas` AS t_pemeriksaan_kode_petugas,
+     t_pemeriksaan.`diagnosa` AS t_pemeriksaan_diagnosa,
+     t_petugas.`kode_petugas` AS t_petugas_kode_petugas,
+     t_petugas.`nama` AS t_petugas_nama,
+     t_petugas.`alamat` AS t_petugas_alamat,
+     t_petugas.`jekel` AS t_petugas_jekel,
+     t_petugas.`no_hp` AS t_petugas_no_hp,
+     t_pasien.`kode_pasien` AS t_pasien_kode_pasien,
+     t_pasien.`nama` AS t_pasien_nama,
+     t_pasien.`status` AS t_pasien_status,
+     t_pasien.`nis_nip` AS t_pasien_nis_nip,
+     t_pasien.`tempat` AS t_pasien_tempat,
+     t_pasien.`tgl` AS t_pasien_tgl,
+     t_pasien.`jekel` AS t_pasien_jekel,
+     t_pasien.`no` AS t_pasien_no,
+     t_pasien.`alamat` AS t_pasien_alamat,
+     t_pasien.`gol` AS t_pasien_gol,
+     t_pasien.`alergi` AS t_pasien_alergi,
+     t_ambilobat.`kode_ambilobat` AS t_ambilobat_kode_ambilobat,
+     CONCAT (t_ambilobat.`obat`,' ',t_ambilobat.`nama`) AS t_ambilobat_obat,
+     t_ambilobat.`obat1` AS t_ambilobat_obat1,
+     t_ambilobat.`obat2` AS t_ambilobat_obat2,
+     t_ambilobat.`nama` AS t_ambilobat_nama,
+     t_ambilobat.`nama1` AS t_ambilobat_nama1,
+     t_ambilobat.`nama2` AS t_ambilobat_nama2,
+     t_stokobat.`kode_obat` AS t_stokobat_kode_obat,
+     t_stokobat.`nama` AS t_stokobat_nama,
+     t_stokobat.`satuan` AS t_stokobat_satuan,
+     t_stokobat.`stok` AS t_stokobat_stok,
+     t_keluhan.`kode_keluhan` AS t_keluhan_kode_keluhan,
+     t_keluhan.`kode_list` AS t_keluhan_kode_list,
+     t_keluhan.`kode_list_1` AS t_keluhan_kode_list_1,
+     t_keluhan.`kode_list_2` AS t_keluhan_kode_list_2,
+     t_listkeluhan.`kode_list` AS t_listkeluhan_kode_list,
+     t_listkeluhan.`keluhan` AS t_listkeluhan_keluhan
+FROM
+     `t_petugas` t_petugas INNER JOIN `t_pemeriksaan` t_pemeriksaan ON t_petugas.`kode_petugas` = t_pemeriksaan.`kode_petugas`
+     INNER JOIN `t_pasien` t_pasien ON t_pemeriksaan.`kode_pasien` = t_pasien.`kode_pasien`
+     INNER JOIN `t_ambilobat` t_ambilobat ON t_pemeriksaan.`kode_ambilobat` = t_ambilobat.`kode_ambilobat`
+     INNER JOIN `t_keluhan` t_keluhan ON t_pemeriksaan.`kode_keluhan` = t_keluhan.`kode_keluhan`
+     INNER JOIN `t_listkeluhan` t_listkeluhan ON t_keluhan.`kode_list` = t_listkeluhan.`kode_list`
+     INNER JOIN `t_stokobat` t_stokobat ON t_ambilobat.`obat` = t_stokobat.`kode_obat`]]>
+	</queryString>
+	<field name="t_pemeriksaan_kode_periksa" class="java.lang.String"/>
+	<field name="t_pemeriksaan_kode_keluhan" class="java.lang.Integer"/>
+	<field name="t_pemeriksaan_kode_ambilobat" class="java.lang.Integer"/>
+	<field name="t_pemeriksaan_kode_pasien" class="java.lang.String"/>
+	<field name="t_pemeriksaan_kode_petugas" class="java.lang.String"/>
+	<field name="t_pemeriksaan_diagnosa" class="java.lang.String"/>
+	<field name="t_petugas_kode_petugas" class="java.lang.String"/>
+	<field name="t_petugas_nama" class="java.lang.String"/>
+	<field name="t_petugas_alamat" class="java.lang.String"/>
+	<field name="t_petugas_jekel" class="java.lang.String"/>
+	<field name="t_petugas_no_hp" class="java.lang.String"/>
+	<field name="t_pasien_kode_pasien" class="java.lang.String"/>
+	<field name="t_pasien_nama" class="java.lang.String"/>
+	<field name="t_pasien_status" class="java.lang.String"/>
+	<field name="t_pasien_nis_nip" class="java.lang.Integer"/>
+	<field name="t_pasien_tempat" class="java.lang.String"/>
+	<field name="t_pasien_tgl" class="java.lang.String"/>
+	<field name="t_pasien_jekel" class="java.lang.String"/>
+	<field name="t_pasien_no" class="java.lang.String"/>
+	<field name="t_pasien_alamat" class="java.lang.String"/>
+	<field name="t_pasien_gol" class="java.lang.String"/>
+	<field name="t_pasien_alergi" class="java.lang.String"/>
+	<field name="t_ambilobat_kode_ambilobat" class="java.lang.Integer"/>
+	<field name="t_ambilobat_obat" class="java.lang.String"/>
+	<field name="t_ambilobat_obat1" class="java.lang.String"/>
+	<field name="t_ambilobat_obat2" class="java.lang.String"/>
+	<field name="t_ambilobat_nama" class="java.lang.Integer"/>
+	<field name="t_ambilobat_nama1" class="java.lang.Integer"/>
+	<field name="t_ambilobat_nama2" class="java.lang.Integer"/>
+	<field name="t_stokobat_kode_obat" class="java.lang.String"/>
+	<field name="t_stokobat_nama" class="java.lang.String"/>
+	<field name="t_stokobat_satuan" class="java.lang.String"/>
+	<field name="t_stokobat_stok" class="java.lang.Integer"/>
+	<field name="t_keluhan_kode_keluhan" class="java.lang.Integer"/>
+	<field name="t_keluhan_kode_list" class="java.lang.String"/>
+	<field name="t_keluhan_kode_list_1" class="java.lang.String"/>
+	<field name="t_keluhan_kode_list_2" class="java.lang.String"/>
+	<field name="t_listkeluhan_kode_list" class="java.lang.String"/>
+	<field name="t_listkeluhan_keluhan" class="java.lang.String"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement uuid="c0f890df-b01e-4a60-b8a9-64b7d3494235" mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699"/>
+				<staticText>
+					<reportElement uuid="55f0235b-6478-4689-a8a5-8b8c48e60c56" x="20" y="20" width="234" height="43" forecolor="#FFFFFF"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[TITLE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="79e399d1-48c2-4980-9763-065b1f070670" x="395" y="43" width="180" height="20" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Add a description here]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="78">
+			<staticText>
+				<reportElement uuid="9c92eb65-3199-4422-aa57-e452aed447e3" mode="Opaque" x="0" y="46" width="39" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[t_pasien_nama]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="472d76d9-1b1a-4a71-b107-2f33d1ab63c3" x="39" y="46" width="39" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{t_pasien_nama}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="965b40d9-8b4d-4f79-af83-a4ffd7cf2a92" mode="Opaque" x="0" y="12" width="39" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[t_pemeriksaan_kode_pasien]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="349779c5-e33b-4552-a50b-9fbd4fabafcd" x="39" y="12" width="39" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{t_pemeriksaan_kode_pasien}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="c725b6cc-b3eb-4997-b1a6-9b72eff3043a" mode="Opaque" x="477" y="12" width="39" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[t_pemeriksaan_kode_keluhan]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="0536146a-db29-4c71-8145-f3e727d488a5" x="516" y="12" width="39" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{t_pemeriksaan_kode_keluhan}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="c931f3dc-e5a1-421f-9825-55993054c3b7" mode="Opaque" x="476" y="46" width="39" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[t_pemeriksaan_kode_ambilobat]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="d4d71124-6d52-4372-8f5a-e588a95a56a1" x="515" y="46" width="39" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{t_pemeriksaan_kode_ambilobat}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement uuid="08979507-8330-48d6-9049-e111c2c1b770" x="-20" y="20" width="595" height="1" forecolor="#666666"/>
+			</line>
+			<staticText>
+				<reportElement uuid="a64eadc6-7454-40f6-981b-4efa5079ffd2" mode="Opaque" x="0" y="0" width="78" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[t_pemeriksaan_kode_periksa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="accd9c6b-4526-4581-a735-b3f7a4791830" mode="Opaque" x="160" y="0" width="74" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[t_pemeriksaan_diagnosa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="31101cb3-ce73-49d4-be17-e1b47dce28d9" mode="Opaque" x="234" y="0" width="74" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[t_keluhan_kode_list]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="99a530bd-7c82-400b-9490-6dd8617d7a8e" mode="Opaque" x="308" y="0" width="67" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[t_keluhan_kode_list_1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="54951260-52bb-42eb-b095-ae2cfb9a5ded" mode="Opaque" x="399" y="0" width="39" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[t_keluhan_kode_list_2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a80d07da-f953-444f-ba70-3768ac9c3f05" mode="Opaque" x="438" y="0" width="39" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[t_ambilobat_obat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0c165ff3-afd2-40be-8ff2-c41d7b81af61" mode="Opaque" x="477" y="0" width="39" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[t_ambilobat_obat1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="478e8e86-4879-4723-ab40-6735826794f9" mode="Opaque" x="516" y="0" width="39" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[t_ambilobat_obat2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e0cec806-ba70-4a57-9d97-987051859dd9" mode="Opaque" x="78" y="0" width="82" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[t_pemeriksaan_kode_petugas]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="26">
+			<line>
+				<reportElement uuid="a7b3bfec-8cc1-4a3f-8cc4-186f184f3320" positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="548a4a78-5eca-461e-aeb0-794cb1363f96" x="0" y="0" width="78" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{t_pemeriksaan_kode_periksa}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="6c9f6cb7-d3e7-4a70-a824-3b2c2b128775" x="160" y="0" width="74" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{t_pemeriksaan_diagnosa}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="52d2feaa-f366-4f6f-81a8-b4c5ebc35ba1" x="234" y="0" width="74" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{t_keluhan_kode_list}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="47f4368c-2cf1-4025-bc1a-e493915bd927" x="308" y="0" width="67" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{t_keluhan_kode_list_1}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="f7cbbbe3-e20d-4a2a-971a-d6fed935a3e0" x="399" y="0" width="39" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{t_keluhan_kode_list_2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="702cf770-b1ed-45a2-8c66-5efb4598ffc6" x="438" y="0" width="39" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{t_ambilobat_obat}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="a0ccc7a2-226c-43bd-9075-f00d5bc316f7" x="477" y="0" width="39" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{t_ambilobat_obat1}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="9843fdf1-e96f-4f2c-9ed6-da40cd49c101" x="516" y="0" width="39" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{t_ambilobat_obat2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="e3a25408-e472-445f-a672-1db9cdbbad2d" x="78" y="0" width="82" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{t_pemeriksaan_kode_petugas}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement uuid="64c738d9-f576-43a5-a895-529ba6cc2e48" mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="c6a09f06-830b-4b15-8df4-faf0f008f5fa" mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="892c2497-73e5-4b12-b981-cd32636ecb28" x="0" y="4" width="100" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

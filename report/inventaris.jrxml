@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="inventaris" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="96c39fa3-61f2-471e-9c08-883f5c8239d5">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     t_inventaris.`kode_inventaris` AS t_inventaris_kode_inventaris,
+     t_inventaris.`tahun` AS t_inventaris_tahun,
+     t_inventaris.`nama` AS t_inventaris_nama,
+     t_inventaris.`jml` AS t_inventaris_jml,
+     t_inventaris.`sumber` AS t_inventaris_sumber,
+     t_inventaris.`keterangan` AS t_inventaris_keterangan
+FROM
+     `t_inventaris` t_inventaris]]>
+	</queryString>
+	<field name="t_inventaris_kode_inventaris" class="java.lang.String"/>
+	<field name="t_inventaris_tahun" class="java.lang.String"/>
+	<field name="t_inventaris_nama" class="java.lang.String"/>
+	<field name="t_inventaris_jml" class="java.lang.String"/>
+	<field name="t_inventaris_sumber" class="java.lang.String"/>
+	<field name="t_inventaris_keterangan" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="43" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="98a81ea0-fbfe-4545-af2f-440e09ec9a55" x="135" y="0" width="291" height="33"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAPORAN INVENTARIS UKS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="1c9d7250-7b83-42fb-88a8-0653fdbd339b" mode="Opaque" x="0" y="0" width="100" height="20" backcolor="#CC99FF"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[kode inventaris]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="daa17d3c-6272-44bf-b866-e434ea03b526" mode="Opaque" x="100" y="0" width="87" height="20" backcolor="#CC99FF"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[tahun]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="82864990-c0a3-40fe-89d3-bb4045969bc1" mode="Opaque" x="187" y="0" width="88" height="20" backcolor="#CC99FF"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[nama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3fe6e592-d14a-4475-9945-4a025d49505e" mode="Opaque" x="275" y="0" width="80" height="20" backcolor="#CC99FF"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[jumlah]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8c761a3c-9920-4c6d-a67c-b29a3c8dff59" mode="Opaque" x="355" y="0" width="100" height="20" backcolor="#CC99FF"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[sumber]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b1315a16-392f-4c44-adea-f9a3717d254a" mode="Opaque" x="455" y="0" width="100" height="20" backcolor="#CC99FF"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[keterangan]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement uuid="60c597ce-ef64-484e-bc78-6474cdccff35" mode="Transparent" x="0" y="0" width="100" height="20" backcolor="#00CCCC"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{t_inventaris_kode_inventaris}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="619f5010-fa42-4703-877d-e73ce2f5c373" mode="Transparent" x="100" y="0" width="87" height="20" backcolor="#00CCCC"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{t_inventaris_tahun}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="49b3ca1a-374e-4323-80a7-49f3e1063962" mode="Transparent" x="187" y="0" width="88" height="20" backcolor="#00CCCC"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{t_inventaris_nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="40e60af1-50ba-48b1-84ad-63d05a17cd3c" mode="Transparent" x="275" y="0" width="80" height="20" backcolor="#00CCCC"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{t_inventaris_jml}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="2e971f45-33f0-4ae4-ac9f-0e0b849ed70a" mode="Transparent" x="355" y="0" width="100" height="20" backcolor="#00CCCC"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{t_inventaris_sumber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="73b5d159-3e56-4760-be47-9e9bcc586164" mode="Transparent" x="455" y="0" width="100" height="20" backcolor="#00CCCC"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{t_inventaris_keterangan}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

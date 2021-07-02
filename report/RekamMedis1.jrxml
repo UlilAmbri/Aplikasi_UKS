@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RekamMedis2" language="groovy" pageWidth="800" pageHeight="842" columnWidth="760" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="58f365dc-0938-4a9f-96b3-3441226cd394">
+	<property name="ireport.zoom" value="1.210000000000002"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     t_pemeriksaan.`kode_periksa` AS t_pemeriksaan_kode_periksa,
+     t_pemeriksaan.`kode_list` AS t_pemeriksaan_kode_list,
+     t_pemeriksaan.`kode_obat` AS t_pemeriksaan_kode_obat,
+     t_pemeriksaan.`kode_pasien` AS t_pemeriksaan_kode_pasien,
+     t_pemeriksaan.`kode_petugas` AS t_pemeriksaan_kode_petugas,
+     t_pemeriksaan.`diagnosa` AS t_pemeriksaan_diagnosa,
+     t_pasien.`kode_pasien` AS t_pasien_kode_pasien,
+     t_pasien.`nama` AS t_pasien_nama,
+     t_pasien.`status` AS t_pasien_status,
+     t_pasien.`nis_nip` AS t_pasien_nis_nip,
+     t_pasien.`tempat` AS t_pasien_tempat,
+     t_pasien.`tgl` AS t_pasien_tgl,
+     t_pasien.`jekel` AS t_pasien_jekel,
+     t_pasien.`no` AS t_pasien_no,
+     t_pasien.`alamat` AS t_pasien_alamat,
+     t_pasien.`gol` AS t_pasien_gol,
+     t_pasien.`alergi` AS t_pasien_alergi,
+     t_ambilobat.`kode_ambilobat` AS t_ambilobat_kode_ambilobat,
+     t_ambilobat.`obat` AS t_ambilobat_obat,
+     t_ambilobat.`obat1` AS t_ambilobat_obat1,
+     t_ambilobat.`obat2` AS t_ambilobat_obat2,
+     t_ambilobat.`nama` AS t_ambilobat_nama,
+     t_ambilobat.`nama1` AS t_ambilobat_nama1,
+     t_ambilobat.`nama2` AS t_ambilobat_nama2,
+     t_keluhan.`kode_keluhan` AS t_keluhan_kode_keluhan,
+     t_keluhan.`kode_list` AS t_keluhan_kode_list,
+     t_keluhan.`kode_list_1` AS t_keluhan_kode_list_1,
+     t_keluhan.`kode_list_2` AS t_keluhan_kode_list_2
+FROM
+     `t_pasien` t_pasien INNER JOIN `t_pemeriksaan` t_pemeriksaan ON t_pasien.`kode_pasien` = t_pemeriksaan.`kode_pasien`,
+     `t_ambilobat` t_ambilobat,
+     `t_keluhan` t_keluhan]]>
+	</queryString>
+	<field name="t_pemeriksaan_kode_periksa" class="java.lang.String"/>
+	<field name="t_pemeriksaan_kode_list" class="java.lang.String"/>
+	<field name="t_pemeriksaan_kode_obat" class="java.lang.String"/>
+	<field name="t_pemeriksaan_kode_pasien" class="java.lang.String"/>
+	<field name="t_pemeriksaan_kode_petugas" class="java.lang.String"/>
+	<field name="t_pemeriksaan_diagnosa" class="java.lang.String"/>
+	<field name="t_pasien_kode_pasien" class="java.lang.String"/>
+	<field name="t_pasien_nama" class="java.lang.String"/>
+	<field name="t_pasien_status" class="java.lang.String"/>
+	<field name="t_pasien_nis_nip" class="java.lang.Integer"/>
+	<field name="t_pasien_tempat" class="java.lang.String"/>
+	<field name="t_pasien_tgl" class="java.lang.String"/>
+	<field name="t_pasien_jekel" class="java.lang.String"/>
+	<field name="t_pasien_no" class="java.lang.String"/>
+	<field name="t_pasien_alamat" class="java.lang.String"/>
+	<field name="t_pasien_gol" class="java.lang.String"/>
+	<field name="t_pasien_alergi" class="java.lang.String"/>
+	<field name="t_ambilobat_kode_ambilobat" class="java.lang.Integer"/>
+	<field name="t_ambilobat_obat" class="java.lang.String"/>
+	<field name="t_ambilobat_obat1" class="java.lang.String"/>
+	<field name="t_ambilobat_obat2" class="java.lang.String"/>
+	<field name="t_ambilobat_nama" class="java.lang.Integer"/>
+	<field name="t_ambilobat_nama1" class="java.lang.Integer"/>
+	<field name="t_ambilobat_nama2" class="java.lang.Integer"/>
+	<field name="t_keluhan_kode_keluhan" class="java.lang.Integer"/>
+	<field name="t_keluhan_kode_list" class="java.lang.String"/>
+	<field name="t_keluhan_kode_list_1" class="java.lang.String"/>
+	<field name="t_keluhan_kode_list_2" class="java.lang.String"/>
+	<group name="anggota">
+		<groupExpression><![CDATA[$F{t_pasien_kode_pasien}]]></groupExpression>
+		<groupHeader>
+			<band height="82">
+				<rectangle>
+					<reportElement uuid="0fb45d1a-1ee1-47fd-889c-e0a9a8e972d8" x="0" y="62" width="760" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				</rectangle>
+				<staticText>
+					<reportElement uuid="dc2be572-742e-49d2-8288-b9705e6904dd" x="0" y="62" width="100" height="20" forecolor="#006699"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Kode Periksa]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="100138db-358f-481e-bf10-05917c08ec68" x="560" y="62" width="100" height="20" forecolor="#006699"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Kode Petugas]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="55f7c6ec-9196-4f76-b816-fee1a4ff3a46" x="660" y="62" width="100" height="20" forecolor="#006699"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Diagnosa]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="75d6cfe7-d75f-4985-8949-afe42c289742" x="338" y="62" width="74" height="20" forecolor="#006699"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Obat 1]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="52b692df-da1d-42b8-b549-5e5eb3f4afaa" x="412" y="62" width="74" height="20" forecolor="#006699"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Obat 2]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="66c3481e-e7e3-4d3f-a7aa-8e77d130845e" x="486" y="62" width="74" height="20" forecolor="#006699"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Obat 3]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="94555d9d-eb03-4436-a9c2-58579b7a3328" x="100" y="62" width="80" height="20" forecolor="#006699"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Keluhan 1]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="20e9656b-03d3-46e9-8fcf-0aff121916bf" x="180" y="62" width="80" height="20" forecolor="#006699"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[keluhan 2]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="05bdce2e-f63c-43e6-9104-60e0c8db2b8f" x="260" y="62" width="80" height="20" forecolor="#006699"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Keluhan 3]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="7807faf9-b359-4eb6-83c2-00014adffe64" x="0" y="20" width="74" height="20" forecolor="#006699"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Nama Pasien]]></text>
+				</staticText>
+				<textField>
+					<reportElement uuid="dc819153-ff13-49ed-9061-6430a0625707" x="74" y="20" width="100" height="20" forecolor="#006699"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{t_pasien_nama}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="e0e758a7-dc06-4a61-891b-4b6d403132b9" x="0" y="0" width="74" height="20" forecolor="#006699"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Kode Pasien]]></text>
+				</staticText>
+				<textField>
+					<reportElement uuid="b3d5cdfe-ff19-480d-b75e-562c9bafbe51" x="74" y="0" width="100" height="20" forecolor="#006699"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{t_pemeriksaan_kode_pasien}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="362d7ffc-0266-4712-bd8a-1c654cc9d05d" x="560" y="20" width="74" height="20" forecolor="#006699"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Kode  Obat]]></text>
+				</staticText>
+				<textField>
+					<reportElement uuid="0c3f50d0-ffd8-47e0-afc1-f294708749a7" x="634" y="20" width="100" height="20" forecolor="#006699"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{t_ambilobat_kode_ambilobat}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="6115b47f-1d2a-4f58-a804-450da1b80409" x="560" y="0" width="74" height="20" forecolor="#006699"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Kode Keluhan]]></text>
+				</staticText>
+				<textField>
+					<reportElement uuid="cb97465d-7012-4416-9904-67bec4b2d0dc" x="634" y="0" width="100" height="20" forecolor="#006699"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{t_keluhan_kode_keluhan}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="16">
+				<line>
+					<reportElement uuid="4d888246-9059-41d1-a517-f3cfb071f0b6" positionType="FixRelativeToBottom" x="0" y="0" width="760" height="1"/>
+				</line>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="68">
+			<frame>
+				<reportElement uuid="b677af06-beef-4632-bc12-e38b66cdd58b" mode="Opaque" x="-20" y="-20" width="801" height="63" backcolor="#006699"/>
+				<image scaleImage="RealHeight" hAlign="Center" vAlign="Middle">
+					<reportElement uuid="65337c88-94db-4389-bb21-1e131ff94fa3" x="10" y="10" width="100" height="43"/>
+					<imageExpression><![CDATA["C:\\Users\\User\\Documents\\NetBeansProjects\\Aplikasi_UKS\\src\\aplikasi_uks\\LogoBaru.png"]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement uuid="ef2e494a-dd38-459d-b0cf-44687c04dbf5" stretchType="RelativeToBandHeight" x="249" y="10" width="372" height="33" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="26" isBold="true"/>
+					</textElement>
+					<text><![CDATA[LAPORAN INVENTARIS UKS]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="b422865e-b3aa-4d13-aaae-e5d5b2af4cbf" stretchType="RelativeToBandHeight" x="280" y="43" width="300" height="20" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Sistem Informasi Aplikasi UKS]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<detail>
+		<band height="20">
+			<textField>
+				<reportElement uuid="6daea1e3-26c0-4768-97bf-fd62dab4a7f6" x="0" y="0" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{t_pemeriksaan_kode_periksa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f9547c28-7b9b-4e38-b9bf-ed86b6cef955" x="560" y="0" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{t_pemeriksaan_kode_petugas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c9a8a10d-9c04-43a4-b288-953a1e77c083" x="660" y="0" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{t_pemeriksaan_diagnosa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a372d29a-5a4a-4c59-851b-7581e712d56d" x="340" y="0" width="74" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{t_ambilobat_obat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="3a9a17a3-bd3d-4abc-aa60-f7308875ae72" x="412" y="0" width="74" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{t_ambilobat_obat1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="99bda853-6e02-4ddf-bb3b-2bc2ed77e5cb" x="486" y="0" width="74" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{t_ambilobat_obat2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a683923d-846c-4536-b692-db4e4fcca996" x="260" y="0" width="80" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{t_keluhan_kode_list_2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a13a06db-f996-40c4-9123-51a69eb26f34" x="100" y="0" width="80" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{t_keluhan_kode_list}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a0f0b3cd-c14f-46e9-b3b2-25b744d5eebf" x="180" y="0" width="80" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{t_keluhan_kode_list_1}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="21">
+			<textField>
+				<reportElement uuid="5b190735-3089-4727-8b1c-68c4b74203bb" mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="e63b79dc-5ec5-4325-b73b-4e1d793c67a9" mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="0b5948fa-e5ad-4d9e-a896-602050e6ca38" x="0" y="4" width="100" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>
